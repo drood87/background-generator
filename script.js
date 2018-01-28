@@ -9,6 +9,7 @@ const colorRandom1 = '#' +(Math.floor(Math.random()*16777215).toString(16));
 const colorRandom2 = '#' +(Math.floor(Math.random()*16777215).toString(16));
 
 const randomButton = document.getElementById("random");
+// const switchButton = document.getElementbyId("switch");
 
 document.querySelector('input[class="color1"]').value = colorRandom1;
 document.querySelector('input[class="color2"]').value = colorRandom2;
@@ -34,6 +35,17 @@ function generateRandomColor() {
 
 }
 
+// generates 3 random background colors
+function switchTo3RandomColors() {
+
+	const colorRandom1 = '#' +(Math.floor(Math.random()*16777215).toString(16));
+    const colorRandom2 = '#' +(Math.floor(Math.random()*16777215).toString(16));
+    const colorRandom3 = '#' +(Math.floor(Math.random()*16777215).toString(16));
+
+    body.style.background = `linear-gradient(to right, ${colorRandom1}, ${colorRandom2}, ${colorRandom3})`;
+
+}
+
 // creating function to change the color on user input
 
     const setGradient = () => body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
@@ -45,6 +57,7 @@ function generateRandomColor() {
 color1.addEventListener("input", setGradient);
 color2.addEventListener("input", setGradient);
 randomButton.addEventListener("click", generateRandomColor);
+switchButton.addEventListener("click", switchTo3RandomColors);
 
 
 
