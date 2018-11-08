@@ -1,74 +1,29 @@
-const css = document.querySelector("h3");
+const color1 = document.querySelector("#inputColor1");
+const color2 = document.querySelector("#inputColor2");
+const output = document.getElementById("output");
+const backgroundWrapper = document.querySelector(".wrapper");
 
-const color1 = document.querySelector(".color1");
-const color2 = document.querySelector(".color2");
+color1.setAttribute("value", color1.value);
+color2.setAttribute("value", color2.value);
 
-const color3 = document.querySelector(".color3");
-
-const body = document.getElementById("gradient");
-
-const colorRandom1 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-const colorRandom2 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-const colorRandom3 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-
-const randomButton = document.getElementById("random");
-const switchButton = document.getElementById("switch");
-
-document.querySelector('input[class="color1"]').value = colorRandom1;
-document.querySelector('input[class="color2"]').value = colorRandom2;
-
-body.style.background = `linear-gradient(to right, ${colorRandom1}, ${colorRandom2})`;
-css.textContent = body.style.background + ";";
-
-
-//generates 2 random colors if user clicks random color button
-function generateRandomColor() {
-
-    const colorRandom1 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-    const colorRandom2 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-
-    
-    body.style.background = `linear-gradient(to right, ${colorRandom1}, ${colorRandom2})`;
-
-    //sets both input values to the chosen random color
-    document.querySelector('input[class="color1"]').value = colorRandom1;
-    document.querySelector('input[class="color2"]').value = colorRandom2;
-
-	css.textContent = body.style.background + ";";	
-
+function changeBackground() {
+    backgroundWrapper.style.background =
+        "linear-gradient(to top right, " +
+        color1.value +
+        ", " +
+        color2.value +
+        ")";
+    output.style.background =
+        "linear-gradient(to top right, " +
+        color2.value +
+        ", " +
+        color1.value +
+        ")";
+    console.log(backgroundWrapper.style.backgroundImage);
+    output.textContent = backgroundWrapper.style.backgroundImage + ";";
 }
+color1.addEventListener("input", changeBackground);
 
-// generates 3 random background colors
-function switchTo3RandomColors() {
+color2.addEventListener("input", changeBackground);
 
-	const colorRandom1 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-    const colorRandom2 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-    const colorRandom3 = '#' +(Math.floor(Math.random()*16777215).toString(16));
-
-    body.style.background = `linear-gradient(to right, ${colorRandom1}, ${colorRandom2}, ${colorRandom3})`;
-
-    document.querySelector('input[class="color1"]').value = colorRandom1;
-    document.querySelector('input[class="color2"]').value = colorRandom2;
-    document.querySelector('input[class="color3"]').value = colorRandom3;
-
-    css.textContent = body.style.background + ";";
-
-}
-
-// creating function to change the color on user input
-
-    const setGradient = () => body.style.background = `linear-gradient(to right, ${color1.value}, ${color2.value})`;
-	css.textContent = body.style.background + ";";
-
-
-
-
-color1.addEventListener("input", setGradient);
-color2.addEventListener("input", setGradient);
-color3.addEventListener("input", setGradient);
-
-randomButton.addEventListener("click", generateRandomColor);
-switchButton.addEventListener("click", switchTo3RandomColors);
-
-
-
+changeBackground();

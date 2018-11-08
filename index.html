@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Gradient Background</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
-</head>
-<body id="gradient">
-	
-<div class="container">
-  <div class="row justify-content-center">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Background Gradient</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah|Oswald|Roboto:400,700"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            media="screen"
+            href="style.css"
+        />
+    </head>
 
-  	<div class="col col-sm-12">
-  	  <h1>Gradient Background Generator</h1>
-  	</div>
-
-	<input class="color1" type="color" name="color1" value="#ab1234">
-	<input class="color2" type="color" name="color2" value="#cd5678">
-	<input class="color3" type="color" name="color3" value="#ab1234">
-
-	<div class="col col-sm-12 text-center">		
-	      <button id="random" class="btn btn-info">Random Color!</button>
-	      <button id="switch" class="btn btn-info">3 color Background</button>	   
-	</div>
-
-	<h2>Current CSS Background</h2>
-	<h3></h3>
-  </div>
-</div>
-	<script type="text/javascript" src="script.js"></script>
-</body>
+    <body>
+        <div class="wrapper">
+            <h1 class="heading font--gloria">Background Generator</h1>
+            <div class="input__wrapper">
+                <input
+                    type="color"
+                    value="#00ff00"
+                    name="color1"
+                    class="color1"
+                    id="inputColor1"
+                />
+                <input
+                    type="color"
+                    value="#ff00ff"
+                    name="color2"
+                    class="color2"
+                    id="inputColor2"
+                />
+            </div>
+            <button id="random" class="font--roboto">Random!</button>
+            <h2 class="subheading font--roboto">Current CSS Background</h2>
+            <h3 class="font--roboto body--output" id="output"></h3>
+        </div>
+        <script src="script.js"></script>
+    </body>
 </html>
-

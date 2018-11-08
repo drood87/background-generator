@@ -1,34 +1,75 @@
-body {
-	font: 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: .5em;
-    top: 15%;
-	/*background: linear-gradient(to right, red , yellow);*/ /* Standard syntax */
+* {
+    margin: 0;
+    padding: 0;
 }
 
-h1,
-h2 {
-    font: 600 3.5em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
+.font--roboto {
+    color: rgb(70, 48, 129);
+    opacity: 0.8;
+    font-family: "Oswald", sans-serif;
+}
+
+.font--gloria {
+    color: rgb(70, 48, 129);
+    opacity: 0.8;
+    font-family: "Gloria Hallelujah", cursive;
+}
+
+.wrapper {
     text-align: center;
+    height: 100vh;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background: linear-gradient(
+        to top right,
+        rgb(55, 128, 215),
+        rgb(223, 135, 47)
+    );
+}
+
+.heading {
+    font-size: 79px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    letter-spacing: .5em;
-    width: 100%;
+}
+
+.subheading {
+    font-size: 39px;
+    letter-spacing: 0.1em;
+}
+
+.body--output {
+    font-size: 30px;
+    letter-spacing: 0.1em;
+}
+
+input {
+    border: none;
+    background-color: rgba(125, 51, 53, 0);
+    padding: 15px;
+    margin: 15px;
+    width: 100px;
+    height: 100px;
 }
 
 h3 {
-	font: 900 1em 'Raleway', sans-serif;
-    color: rgba(0,0,0,.5);
-    text-align: center;
-    text-transform: none;
-    letter-spacing: 0.01em;
-    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 100px;
+    border-radius: 5px;
+    -webkit-box-shadow: 12px 14px 30px -8px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 12px 14px 30px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 12px 14px 30px -8px rgba(0, 0, 0, 0.75);
 }
 
-#random {
-    margin: 15px 15px;     
-}
-
-
+button {
+	padding: 10px 20px 10px 20px;
+	margin: 5px;
+	border: none;
+    background-color:rgba(252, 153, 20, 0.8);
+    font-size: 1.2em;
+	border-radius: 5px;
+	box-shadow: -webkit-box-shadow: 4px 6px 23px -2px rgba(17,128,109,0.71);
+				-moz-box-shadow: 4px 6px 23px -2px rgba(17,128,109,0.71);
+				box-shadow: 4px 6px 23px -2px rgba(17,128,109,0.71);
