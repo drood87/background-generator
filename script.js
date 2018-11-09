@@ -31,7 +31,7 @@ function randomColor() {
 
     // concat rgb to Hex
 
-    var rgb = r + g + b;
+    let rgb = r + g + b;
     console.log(`concat ${rgb}`);
 
     if (rgb.length < 6) {
@@ -39,15 +39,16 @@ function randomColor() {
         console.log(`rgb ${rgb}`);
         return rgb;
     }
-    color1.setAttribute("value", `#${rgb}`);
-    color2.setAttribute("value", `#${rgb}`);
+
     console.log(r, g, b);
     changeBackground();
+    return rgb;
 }
 
 color1.addEventListener("input", changeBackground);
 color2.addEventListener("input", changeBackground);
 randomButton.addEventListener("click", randomColor);
-
+color1.setAttribute("value", `#${randomColor()}`);
+color2.setAttribute("value", `#${randomColor()}`);
 changeBackground();
 randomColor();
