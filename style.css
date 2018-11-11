@@ -20,10 +20,6 @@
     height: 100vh;
     background-size: contain;
     background-repeat: no-repeat;
-    background: linear-gradient(
-        to top right,
-        rgb(55, 128, 215),
-        rgb(223, 135, 47)
     );
 }
 
